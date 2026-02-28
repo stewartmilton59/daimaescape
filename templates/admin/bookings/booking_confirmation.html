@@ -1,0 +1,52 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div class="container-fluid">
+  <h2>Confirm Cancellation</h2>
+
+  <div class="alert alert-warning">
+    <p>Are you sure you want to cancel the following bookings?</p>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Reference</th>
+        <th>Guest</th>
+        <th>Room</th>
+        <th>Check In</th>
+        <th>Check Out</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for booking in queryset %}
+      <tr>
+        <td>{{ booking.booking_reference }}</td>
+        <td>{{ booking.guest_name }}</td>
+        <td>{{ booking.room.name }}</td>
+        <td>{{ booking.check_in_date }}</td>
+        <td>{{ booking.check_out_date }}</td>
+        <td>{{ booking.get_status_display }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="confirm" value="yes">
+    <input type="hidden" name="action" value="mark_as_cancelled">
+    <input type="hidden" name="select_across" value="{{ select_across }}">
+    <input type="hidden" name="index" value="{{ index }}">
+    {% for obj in queryset %}
+    <input type="hidden" name="_selected_action" value="{{ obj.pk }}">
+    {% endfor %}
+
+    <div class="submit-row">
+      <input type="submit" class="btn btn-danger" value="Yes, cancel these bookings">
+      <a href="{% url 'admin:bookings_booking_changelist' %}" class="btn btn-secondary">No, go back</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

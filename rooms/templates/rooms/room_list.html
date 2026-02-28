@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Rooms - Daimaescape{% endblock %}
+
+{% block content %}
+{% include 'partials/header.html' %}
+
+<!-- Room Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title text-center text-primary text-uppercase">Our Rooms</h6>
+      <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Luxury Rooms</span></h1>
+    </div><br><br><br>
+
+   <!-- Filter Section Start -->
+<div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="bg-white shadow" style="padding: 35px;">
+      <form method="get">
+        <div class="row g-2">
+          <div class="col-md-10">
+            <div class="row g-2">
+              <div class="col-md-3">
+                <label class="form-label text-primary fw-bold mb-1">Room Type</label>
+                <select name="type" class="form-select">
+                  <option value="">All Room Types</option>
+                  {% for key, value in room_types %}
+                    <option value="{{ key }}" {% if current_type == key %}selected{% endif %}>{{ value }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label text-primary fw-bold mb-1">Min Price</label>
+                <input type="number" name="min_price" class="form-control" placeholder="Tzsh" 
+                  value="{{ request.GET.min_price }}">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label text-primary fw-bold mb-1">Max Price</label>
+                <input type="number" name="max_price" class="form-control" placeholder="Tzsh" 
+                  value="{{ request.GET.max_price }}">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label text-primary fw-bold mb-1">Search</label>
+                <input type="text" name="search" class="form-control" placeholder="Room name or description" 
+                  value="{{ search_query }}">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row g-2">
+              <div class="col-6 col-md-12">
+                <label class="form-label text-primary fw-bold mb-1 d-none d-md-block">&nbsp;</label>
+                <button type="submit" class="btn btn-primary w-100">Filter</button>
+              </div>
+              <div class="col-6 col-md-12 mt-md-2">
+                <label class="form-label text-primary fw-bold mb-1 d-none d-md-block">&nbsp;</label>
+                <a href="{% url 'rooms:room_list' %}" class="btn btn-secondary w-100">Reset</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Filter Section End -->
+
+    <div class="row g-4">
+      {% for room in rooms %}
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+        <div class="room-item shadow rounded overflow-hidden">
+          <div class="position-relative">
+            {% if room.main_image %}
+            <img class="img-fluid" src="{{ room.main_image.url }}" alt="{{ room.name }}"
+              style="width: 100%; height: 250px; object-fit: cover;">
+            {% else %}
+            <img class="img-fluid" src="{% static 'img/room-default.jpg' %}" alt="{{ room.name }}"
+              style="width: 100%; height: 250px; object-fit: cover;">
+            {% endif %}
+            {% if room.discount_percent > 0 %}
+            <small
+              class="position-absolute start-0 top-100 translate-middle-y bg-danger text-white rounded py-1 px-3 ms-4">
+              <span style="text-decoration: line-through;">${{ room.price_per_night }}</span>
+              Tzsh{{ room.get_discounted_price|floatformat:0 }}/Night
+            </small>
+            {% else %}
+            <small
+              class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
+              Tzsh{{ room.price_per_night }}/Night
+            </small>
+            {% endif %}
+          </div>
+          <div class="p-4 mt-2">
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="mb-0">{{ room.name }}</h5>
+              <div class="ps-2">
+                {% for i in "12345"|make_list %}
+                {% if forloop.counter <= room.rating %} <small class="fa fa-star text-primary"></small>
+                  {% else %}
+                  <small class="fa fa-star text-secondary"></small>
+                  {% endif %}
+                  {% endfor %}
+                  <small>({{ room.total_reviews }})</small>
+              </div>
+            </div>
+            <div class="d-flex mb-3">
+              {% for feature in room.features.all|slice:":3" %}
+              <small class="{% if not forloop.last %}border-end me-3 pe-3{% endif %}">
+                <i class="fa {{ feature.icon }} text-primary me-2"></i>{{ feature.text }}
+              </small>
+              {% empty %}
+              <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>{{ room.beds }} Bed</small>
+              <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>{{ room.bathrooms }}
+                Bath</small>
+              {% if room.has_wifi %}
+              <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <p class="text-body mb-3">{{ room.short_description|default:room.description|truncatechars:100 }}</p>
+            <div class="d-flex justify-content-between">
+              <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{% url 'rooms:room_detail' room.slug %}">View
+                Detail</a>
+              <a class="btn btn-sm btn-dark rounded py-2 px-4"
+                href="{% url 'booking:booking' %}?room={{ room.slug }}">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12 text-center">
+        <div class="alert alert-info">
+          <h4>No rooms available at the moment</h4>
+          <p>Please check back later or contact us for availability.</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if rooms.has_other_pages %}
+    <div class="row mt-5">
+      <div class="col-12">
+        <nav aria-label="Room navigation">
+          <ul class="pagination justify-content-center">
+            {% if rooms.has_previous %}
+            <li class="page-item">
+              <a class="page-link"
+                href="?page={{ rooms.previous_page_number }}{% if request.GET.type %}&type={{ request.GET.type }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.min_price %}&min_price={{ request.GET.min_price }}{% endif %}{% if request.GET.max_price %}&max_price={{ request.GET.max_price }}{% endif %}"
+                aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            {% endif %}
+
+            {% for num in rooms.paginator.page_range %}
+            {% if rooms.number == num %}
+            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+            {% elif num > rooms.number|add:'-3' and num < rooms.number|add:'3' %} <li class="page-item"><a
+                class="page-link"
+                href="?page={{ num }}{% if request.GET.type %}&type={{ request.GET.type }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.min_price %}&min_price={{ request.GET.min_price }}{% endif %}{% if request.GET.max_price %}&max_price={{ request.GET.max_price }}{% endif %}">{{
+                num }}</a></li>
+              {% endif %}
+              {% endfor %}
+
+              {% if rooms.has_next %}
+              <li class="page-item">
+                <a class="page-link"
+                  href="?page={{ rooms.next_page_number }}{% if request.GET.type %}&type={{ request.GET.type }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.min_price %}&min_price={{ request.GET.min_price }}{% endif %}{% if request.GET.max_price %}&max_price={{ request.GET.max_price }}{% endif %}"
+                  aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+              {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+<!-- Room End -->
+<br><br><br><br>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!-- Villa Types Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title text-center text-primary text-uppercase">Our Villas</h6>
+      <h1 class="mb-5">Choose Your <span class="text-primary text-uppercase">Private Escape</span></h1>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="card border-0 shadow overflow-hidden">
+          <div class="row g-0">
+            <div class="col-md-6">
+              <img src="{% static 'img/one-bedroom-villa.jpg' %}" class="img-fluid h-100" style="object-fit: cover;"
+                alt="One-Bedroom Villa">
+            </div>
+            <div class="col-md-6 p-4">
+              <h4 class="text-primary">One-Bedroom Villa</h4>
+              <h3 class="mb-3">Cozy Retreat for Couples</h3>
+              <p class="mb-3">Perfect for couples seeking intimacy and privacy. Features a comfortable bedroom, modern
+                living area, and fully equipped kitchen.</p>
+              <ul class="list-unstyled mb-4">
+                <li><i class="fa fa-check text-primary me-2"></i>King-size bed with quality linen</li>
+                <li><i class="fa fa-check text-primary me-2"></i>Private bathroom with hot shower</li>
+                <li><i class="fa fa-check text-primary me-2"></i>Fully equipped kitchen</li>
+                <li><i class="fa fa-check text-primary me-2"></i>Outdoor patio with garden views</li>
+              </ul>
+              <a href="{% url 'rooms:room_list' %}?type=one_bedroom" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="card border-0 shadow overflow-hidden">
+          <div class="row g-0">
+            <div class="col-md-6">
+              <img src="{% static 'img/two-bedroom-villa.jpg' %}" class="img-fluid h-100" style="object-fit: cover;"
+                alt="Two-Bedroom Villa">
+            </div>
+            <div class="col-md-6 p-4">
+              <h4 class="text-primary">Two-Bedroom Villa</h4>
+              <h3 class="mb-3">Spacious Family Home</h3>
+              <p class="mb-3">Accommodates up to 6 guests. Ideal for families or small groups seeking space and comfort
+                in nature.</p>
+              <ul class="list-unstyled mb-4">
+                <li><i class="fa fa-check text-primary me-2"></i>Two bedrooms with quality linen</li>
+                <li><i class="fa fa-check text-primary me-2"></i>Two bathrooms with hot showers</li>
+                <li><i class="fa fa-check text-primary me-2"></i>Living and dining area</li>
+                <li><i class="fa fa-check text-primary me-2"></i>Private backyard with BBQ grill</li>
+              </ul>
+              <a href="{% url 'rooms:room_list' %}?type=two_bedroom" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Villa Types End -->

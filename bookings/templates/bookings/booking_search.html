@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Find Your Booking - Daimaescape{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
+  <div class="container-fluid page-header-inner py-5">
+    <div class="container text-center pb-5">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">Find Your Booking</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center text-uppercase">
+          <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'booking:booking' %}">Booking</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">Search</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Search Form Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="bg-light rounded p-5">
+          <h2 class="text-center mb-4">Look Up Your Booking</h2>
+          <p class="text-center text-muted mb-4">Enter your booking reference and email address to view or manage your
+            reservation.</p>
+
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          <form method="post" class="booking-search-form">
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label for="{{ form.booking_reference.id_for_label }}" class="form-label fw-bold">Booking
+                Reference</label>
+              {{ form.booking_reference }}
+              {% if form.booking_reference.errors %}
+              <div class="text-danger">{{ form.booking_reference.errors }}</div>
+              {% endif %}
+              <div class="form-text">e.g., 270226-DY9H8</div>
+            </div>
+
+            <div class="mb-4">
+              <label for="{{ form.guest_email.id_for_label }}" class="form-label fw-bold">Email Address</label>
+              {{ form.guest_email }}
+              {% if form.guest_email.errors %}
+              <div class="text-danger">{{ form.guest_email.errors }}</div>
+              {% endif %}
+              <div class="form-text">The email used when booking</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-3">
+              <i class="fa fa-search me-2"></i>Search Booking
+            </button>
+          </form>
+
+          <hr class="my-4">
+
+          <div class="text-center">
+            <p class="mb-2">Don't have a booking yet?</p>
+            <a href="{% url 'booking:booking' %}" class="btn btn-outline-primary">Make a Reservation</a>
+          </div>
+        </div>
+
+        <!-- Help Card -->
+        <div class="bg-primary text-white rounded p-4 mt-4 text-center">
+          <h5 class="text-white mb-3">Need Help Finding Your Booking?</h5>
+          <p class="mb-3">Contact our reservations team for assistance.</p>
+          <div class="d-flex justify-content-center gap-4">
+            <div>
+              <i class="fa fa-phone-alt me-2"></i>
+              <span>+255 754 374 842</span>
+            </div>
+            <div>
+              <i class="fa fa-envelope me-2"></i>
+              <span>reservations@daimaescape.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Search Form End -->
+<br><br><br><br>
+{% endblock %}

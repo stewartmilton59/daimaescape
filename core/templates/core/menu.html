@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Restaurant Menu - Daima Escape{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
+  <div class="container-fluid page-header-inner py-5">
+    <div class="container text-center pb-5">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">Restaurant Menu</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center text-uppercase">
+          <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">Menu</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Restaurant Description -->
+<div class="container-xxl py-3">
+  <div class="container">
+    <div class="text-center">
+      <p class="lead">A perfect open bar and restaurant set within lush gardens, featuring a spacious patio, swimming
+        pool, and backyard that create a warm and inviting atmosphere.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Categories Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <!-- Hot Drinks -->
+    <div class="row mb-5 wow fadeInUp">
+      <div class="col-12">
+        <div class="bg-primary text-white p-4 rounded-top">
+          <h2 class="mb-0"><i class="fa fa-coffee me-2"></i>Hot Drinks</h2>
+        </div>
+        <div class="bg-light p-4 rounded-bottom">
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>Black Tea</td>
+                  <td class="text-end text-primary fw-bold">TSh 2,000/=</td>
+                </tr>
+                <tr>
+                  <td>White Tea</td>
+                  <td class="text-end text-primary fw-bold">TSh 3,000/=</td>
+                </tr>
+                <tr>
+                  <td>Masala Tea</td>
+                  <td class="text-end text-primary fw-bold">TSh 3,000/=</td>
+                </tr>
+                <tr>
+                  <td>Black Coffee</td>
+                  <td class="text-end text-primary fw-bold">TSh 3,000/=</td>
+                </tr>
+                <tr>
+                  <td>White Coffee</td>
+                  <td class="text-end text-primary fw-bold">TSh 4,000/=</td>
+                </tr>
+                <tr>
+                  <td>Hot Chocolate</td>
+                  <td class="text-end text-primary fw-bold">TSh 5,000/=</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foods -->
+    <div class="row mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-12">
+        <div class="bg-primary text-white p-4 rounded-top">
+          <h2 class="mb-0"><i class="fa fa-utensils me-2"></i>Foods</h2>
+        </div>
+        <div class="bg-light p-4 rounded-bottom">
+          <p class="text-muted mb-3"><i class="fa fa-info-circle me-2"></i>All served with Chips, Potato Wedges, Ugali,
+            Wali, Fried Banana (Mzuzu/Mshale 2pcs), Spaghetti and/or Macaroni</p>
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-drumstick-bite text-primary me-2"></i> Beef (Roasted • Makange • Grilled • Fried)
+                  </td>
+                  <td class="text-end text-primary fw-bold">TSh 15,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-drumstick-bite text-primary me-2"></i> Chicken (Broiler)</td>
+                  <td class="text-end text-primary fw-bold">TSh 20,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-drumstick-bite text-primary me-2"></i> Chicken (Local)</td>
+                  <td class="text-end text-primary fw-bold">TSh 30,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-bacon text-primary me-2"></i> Pork</td>
+                  <td class="text-end text-primary fw-bold">TSh 25,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-egg text-primary me-2"></i> Chips Zege (chips mixed with Eggs)</td>
+                  <td class="text-end text-primary fw-bold">TSh 7,000/=</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Soft Drinks -->
+    <div class="row mb-5 wow fadeInUp" data-wow-delay="0.2s">
+      <div class="col-12">
+        <div class="bg-primary text-white p-4 rounded-top">
+          <h2 class="mb-0"><i class="fa fa-glass me-2"></i>Soft Drinks</h2>
+        </div>
+        <div class="bg-light p-4 rounded-bottom">
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-coke text-primary me-2"></i> Soda (Coke, Sprite, Fanta, etc.)</td>
+                  <td class="text-end text-primary fw-bold">TSh 2,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-glass text-primary me-2"></i> Juice (Fresh fruit juice)</td>
+                  <td class="text-end text-primary fw-bold">TSh 5,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-water text-primary me-2"></i> Water (Mineral water)</td>
+                  <td class="text-end text-primary fw-bold">TSh 1,500/=</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alcohol -->
+    <div class="row mb-5 wow fadeInUp" data-wow-delay="0.3s">
+      <div class="col-12">
+        <div class="bg-primary text-white p-4 rounded-top">
+          <h2 class="mb-0"><i class="fa fa-wine-glass-alt me-2"></i>Alcohol</h2>
+        </div>
+        <div class="bg-light p-4 rounded-bottom">
+          <h5 class="text-primary mb-3">Local Beers</h5>
+          <div class="table-responsive mb-4">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-beer text-primary me-2"></i> Serengeti Lager, Kilimanjaro, Safari, Castle Light,
+                    Serengeti Light</td>
+                  <td class="text-end text-primary fw-bold">TSh 4,000/=</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h5 class="text-primary mb-3">Imported Beers</h5>
+          <div class="table-responsive mb-4">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-beer text-primary me-2"></i> Heineken, Whinhoek, Savannah, Brutal, Flying Fish
+                  </td>
+                  <td class="text-end text-primary fw-bold">TSh 6,000/=</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h5 class="text-primary mb-3">Wines</h5>
+          <div class="table-responsive mb-4">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-wine-glass text-primary me-2"></i> Red sweet Wine</td>
+                  <td class="text-end text-primary fw-bold">TSh 35,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-wine-glass text-primary me-2"></i> Red Dry Wine</td>
+                  <td class="text-end text-primary fw-bold">TSh 35,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-wine-glass-alt text-primary me-2"></i> White sweet Wine</td>
+                  <td class="text-end text-primary fw-bold">TSh 35,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-wine-glass-alt text-primary me-2"></i> White Dry Wine</td>
+                  <td class="text-end text-primary fw-bold">TSh 35,000/=</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h5 class="text-primary mb-3">Spirits</h5>
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-cocktail text-primary me-2"></i> Gin - Konyagi</td>
+                  <td class="text-end text-primary fw-bold">TSh 15,000/=</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-cocktail text-primary me-2"></i> Gin - K-Vant</td>
+                  <td class="text-end text-primary fw-bold">TSh 20,000/=</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <div class="bg-white p-5 rounded shadow">
+          <h3 class="mb-4">Dine with Us</h3>
+          <p class="mb-4">Enjoy delicious meals and refreshing drinks while relaxing by the cozy fireplace, breathing in
+            fresh air, and taking in tranquil garden views.</p>
+          <a href="{% url 'booking:booking' %}" class="btn btn-primary btn-lg">Book Your Table</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Menu Categories End -->
+<br><br><br><br>
+{% endblock %}

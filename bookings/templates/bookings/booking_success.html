@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Booking Successful - Daimaescape{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center pb-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Booking Confirmed</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'booking:booking' %}">Booking</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Success</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Success Message Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="bg-light rounded p-5 text-center">
+                    <!-- Success Icon -->
+                    <div class="mb-4">
+                        <i class="fa fa-check-circle text-primary" style="font-size: 5rem;"></i>
+                    </div>
+                    
+                    <!-- Thank You Message -->
+                    <h2 class="mb-3">Thank You, {{ booking.guest_name }}!</h2>
+                    <p class="lead mb-4">Your booking has been confirmed successfully.</p>
+                    
+                    <!-- Booking Reference -->
+                    <div class="bg-white rounded p-4 mb-4">
+                        <h5 class="mb-3">Booking Reference</h5>
+                        <h3 class="text-primary">{{ booking.booking_reference }}</h3>
+                        <p class="text-muted mb-0">Please save this reference for future inquiries.</p>
+                    </div>
+                    
+                    <!-- Booking Summary -->
+                    <div class="bg-white rounded p-4 mb-4 text-start">
+                        <h5 class="mb-3">Booking Summary</h5>
+                        <div class="row">
+                            <div class="col-sm-6 mb-3">
+                                <strong>Room:</strong> {{ booking.room.name }}
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <strong>Room Type:</strong> {{ booking.room.get_room_type_display }}
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <strong>Check-in:</strong> {{ booking.check_in_date|date:"F d, Y" }}
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <strong>Check-out:</strong> {{ booking.check_out_date|date:"F d, Y" }}
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <strong>Nights:</strong> {{ booking.total_nights }}
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <strong>Guests:</strong> {{ booking.adults }} Adult{% if booking.adults > 1 %}s{% endif %}{% if booking.children %}, {{ booking.children }} Child{% if booking.children > 1 %}ren{% endif %}{% endif %}
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <strong>Total Amount:</strong> Tzsh {{ booking.total_amount }}
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <strong>Payment Status:</strong> 
+                                <span class="badge {% if booking.payment_status == 'paid' %}bg-success{% elif booking.payment_status == 'pending' %}bg-warning{% else %}bg-secondary{% endif %}">
+                                    {{ booking.get_payment_status_display }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Email Confirmation Note -->
+                    <div class="alert alert-info">
+                        <i class="fa fa-envelope me-2"></i>
+                        A confirmation email has been sent to <strong>{{ booking.guest_email }}</strong>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+                        <a href="{% url 'booking:booking_detail' booking.booking_reference %}" class="btn btn-primary py-2 px-4">
+                            <i class="fa fa-eye me-2"></i>View Booking
+                        </a>
+                        <a href="{% url 'booking:booking' %}" class="btn btn-outline-primary py-2 px-4">
+                            <i class="fa fa-plus me-2"></i>Book Another Room
+                        </a>
+                        <a href="{% url 'core:home' %}" class="btn btn-outline-secondary py-2 px-4">
+                            <i class="fa fa-home me-2"></i>Return Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Success Message End -->
+<br><br><br><br>
+{% endblock %}

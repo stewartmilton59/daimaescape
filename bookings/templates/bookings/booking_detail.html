@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Booking Details - Daimaescape{% endblock %}
+
+{% block extra_css %}
+<style>
+  @media print {
+
+    /* Hide navigation, header, footer, and other non-essential elements */
+    .navbar,
+    .footer,
+    .page-header,
+    .back-to-top,
+    .booking-actions,
+    .sidebar,
+    .btn,
+    .no-print,
+    .col-lg-4 {
+      /* Hide sidebar column */
+      display: none !important;
+    }
+
+    /* Make the main content full width */
+    .col-lg-8 {
+      width: 100% !important;
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+    }
+
+    /* Remove background colors, shadows, and borders for print */
+    .bg-light,
+    .rounded,
+    .shadow {
+      background: white !important;
+      box-shadow: none !important;
+      border: 1px solid #ddd !important;
+    }
+
+    /* Ensure text is black for readability */
+    body,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    span {
+      color: black !important;
+    }
+
+    /* Show links as plain text */
+    a {
+      text-decoration: none !important;
+      color: black !important;
+    }
+
+    /* Add a subtle border to cards */
+    .bg-light.rounded {
+      border: 1px solid #ccc !important;
+      margin-bottom: 15px !important;
+      padding: 15px !important;
+    }
+
+    /* Optional: add a printed date */
+    .print-date {
+      display: block !important;
+      text-align: right;
+      font-size: 0.8em;
+      color: #666;
+      margin-top: 20px;
+      border-top: 1px dashed #ccc;
+      padding-top: 10px;
+    }
+  }
+
+  /* Hide print-date on screen */
+  .print-date {
+    display: none;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
+  <div class="container-fluid page-header-inner py-5">
+    <div class="container text-center pb-5">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">Booking Details</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center text-uppercase">
+          <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'booking:booking' %}">Booking</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'booking:booking_search' %}">Search</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">{{ booking.booking_reference }}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Booking Detail Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Main Content - This will be printed -->
+      <div class="col-lg-8 print-content">
+        <!-- Status Alert (visible on screen, hidden in print) -->
+        <div
+          class="alert no-print {% if booking.status == 'confirmed' %}alert-success{% elif booking.status == 'cancelled' %}alert-danger{% elif booking.status == 'checked_in' %}alert-info{% elif booking.status == 'checked_out' %}alert-secondary{% else %}alert-warning{% endif %} d-flex align-items-center mb-4">
+          <i
+            class="fa {% if booking.status == 'confirmed' %}fa-check-circle{% elif booking.status == 'cancelled' %}fa-times-circle{% elif booking.status == 'checked_in' %}fa-door-open{% elif booking.status == 'checked_out' %}fa-door-closed{% else %}fa-clock{% endif %} fa-2x me-3"></i>
+          <div>
+            <strong>Status: {{ booking.get_status_display }}</strong><br>
+            {% if booking.status == 'confirmed' %}
+            Your booking is confirmed. We look forward to welcoming you!
+            {% elif booking.status == 'cancelled' %}
+            This booking has been cancelled.
+            {% elif booking.status == 'checked_in' %}
+            You are checked in. Enjoy your stay!
+            {% elif booking.status == 'checked_out' %}
+            Thank you for staying with us. We hope to see you again!
+            {% elif booking.status == 'pending' %}
+            Your booking is pending confirmation.
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Booking Information Card -->
+        <div class="bg-light rounded p-4 mb-4">
+          <h4 class="mb-3">Booking Information</h4>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <strong>Booking Reference:</strong>
+              <p class="text-primary h5">{{ booking.booking_reference }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Booking Date:</strong>
+              <p>{{ booking.created_at|date:"F d, Y H:i" }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Room:</strong>
+              <p>{{ booking.room.name }} ({{ booking.room.room_number }})</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Room Type:</strong>
+              <p>{{ booking.room.get_room_type_display }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Check-in:</strong>
+              <p>{{ booking.check_in_date|date:"l, F d, Y" }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Check-out:</strong>
+              <p>{{ booking.check_out_date|date:"l, F d, Y" }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Nights:</strong>
+              <p>{{ booking.total_nights }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Guests:</strong>
+              <p>
+                {{ booking.adults }} Adult{{ booking.adults|pluralize }}
+                {% if booking.children %}
+                , {{ booking.children }} Child{{ booking.children|pluralize:"ren" }}
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guest Information Card -->
+        <div class="bg-light rounded p-4 mb-4">
+          <h4 class="mb-3">Guest Information</h4>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <strong>Full Name:</strong>
+              <p>{{ booking.guest_name }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Email:</strong>
+              <p>{{ booking.guest_email }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Phone:</strong>
+              <p>{{ booking.guest_phone }}</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <strong>Address:</strong>
+              <p>{{ booking.guest_address|default:"Not provided" }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price Breakdown Card -->
+        <div class="bg-light rounded p-4 mb-4">
+          <h4 class="mb-3">Price Breakdown</h4>
+          <div class="table-responsive">
+            <table class="table table-borderless">
+              <tr>
+                <td>Price per night:</td>
+                <td class="text-end">Tzsh {{ booking.price_per_night }}</td>
+              </tr>
+              <tr>
+                <td>Nights:</td>
+                <td class="text-end">{{ booking.total_nights }}</td>
+              </tr>
+              <tr>
+                <td>Subtotal:</td>
+                <td class="text-end">Tzsh {{ booking.subtotal }}</td>
+              </tr>
+              <tr>
+                <td>Tax (18%):</td>
+                <td class="text-end">Tzsh {{ booking.tax_amount }}</td>
+              </tr>
+              {% if booking.discount_amount > 0 %}
+              <tr>
+                <td>Discount:</td>
+                <td class="text-end text-danger">- Tzsh {{ booking.discount_amount }}</td>
+              </tr>
+              {% endif %}
+              <tr class="border-top">
+                <th>Total Amount:</th>
+                <th class="text-end text-primary">Tzsh {{ booking.total_amount }}</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Special Requests -->
+        {% if booking.special_requests %}
+        <div class="bg-light rounded p-4 mb-4">
+          <h4 class="mb-3">Special Requests</h4>
+          <p>{{ booking.special_requests }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Action Buttons (hidden when printing) -->
+        <div class="d-flex flex-wrap gap-3 no-print">
+          {% if booking.can_cancel %}
+          <a href="{% url 'booking:booking_cancel' booking.booking_reference %}" class="btn btn-danger py-2 px-4"
+            onclick="return confirm('Are you sure you want to cancel this booking?');">
+            <i class="fa fa-times me-2"></i>Cancel Booking
+          </a>
+          {% endif %}
+          <a href="{% url 'booking:booking' %}?room={{ booking.room.slug }}&check_in={{ booking.check_in_date|date:'Y-m-d' }}&check_out={{ booking.check_out_date|date:'Y-m-d' }}&adults={{ booking.adults }}&children={{ booking.children }}"
+            class="btn btn-outline-primary py-2 px-4">
+            <i class="fa fa-refresh me-2"></i>Modify Booking
+          </a>
+          <button onclick="window.print();" class="btn btn-outline-secondary py-2 px-4">
+            <i class="fa fa-print me-2"></i>Print Details
+          </button>
+        </div>
+
+        <!-- Printed date (only visible in print) -->
+        <div class="print-date">
+          Printed on {% now "F j, Y H:i" %}
+        </div>
+      </div>
+
+      <!-- Sidebar (hidden in print) -->
+      <div class="col-lg-4 sidebar no-print">
+        <!-- Room Image -->
+        <div class="bg-light rounded p-4 mb-4">
+          {% if booking.room.main_image %}
+          <img src="{{ booking.room.main_image.url }}" class="img-fluid rounded mb-3" alt="{{ booking.room.name }}">
+          {% else %}
+          <img src="{% static 'img/room-default.jpg' %}" class="img-fluid rounded mb-3" alt="Room Image">
+          {% endif %}
+          <h5>{{ booking.room.name }}</h5>
+          <p class="text-muted mb-2">{{ booking.room.short_description|truncatechars:100 }}</p>
+          <a href="{% url 'rooms:room_detail' booking.room.slug %}" class="btn btn-sm btn-outline-primary w-100">View
+            Room Details</a>
+        </div>
+
+        <!-- Payment Status -->
+        <div class="bg-light rounded p-4 mb-4">
+          <h5 class="mb-3">Payment Status</h5>
+          <div class="d-flex align-items-center mb-3">
+            <span
+              class="badge {% if booking.payment_status == 'paid' %}bg-success{% elif booking.payment_status == 'pending' %}bg-warning{% elif booking.payment_status == 'partial' %}bg-info{% else %}bg-secondary{% endif %} p-2 fs-6 w-100 text-center">
+              {{ booking.get_payment_status_display }}
+            </span>
+          </div>
+          {% if booking.payment_status == 'pending' %}
+          <p class="text-muted small">Payment is pending. You can pay at check-in.</p>
+          {% elif booking.payment_status == 'partial' %}
+          <p class="text-muted small">Partial payment received.</p>
+          {% endif %}
+        </div>
+
+        <!-- Contact Information -->
+        <div class="bg-primary text-white rounded p-4">
+          <h5 class="text-white mb-3">Need Assistance?</h5>
+          <p class="mb-3">Our team is available 24/7 to help you with any inquiries.</p>
+          <div class="d-flex align-items-center mb-2">
+            <i class="fa fa-phone-alt me-3"></i>
+            <span>+255 754 374 842</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fa fa-envelope me-3"></i>
+            <span>reservations@daimaescape.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Booking Detail End -->
+<br><br><br><br><br>
+{% endblock %}

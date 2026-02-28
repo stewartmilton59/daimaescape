@@ -1,0 +1,285 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Our Services - Daima Escape{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center pb-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Our Services</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Introduction -->
+<div class="container-xxl py-3">
+    <div class="container text-center">
+        <p class="lead">At Daima Escape, we provide a range of facilities and services designed to enhance your stay and make your experience truly memorable.</p>
+    </div>
+</div>
+
+<!-- Services Grid Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp mb-5">
+            <h6 class="section-title text-center text-primary text-uppercase">Our Services</h6>
+            <h1 class="mb-4">Everything You <span class="text-primary">Need</span> for a Perfect Stay</h1>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Swimming Pool -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-swimmer text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">Swimming Pool</h4>
+                    <p class="text-muted mb-3">A stunning pool area with hot tub, beautifully lit at night. Perfect for unwinding after a day of exploration.</p>
+                </div>
+            </div>
+            
+            <!-- Restaurant & Bar -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-utensils text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">On-Site Restaurant & Bar</h4>
+                    <p class="text-muted mb-3">Serves a variety of local and international cuisines prepared with fresh, locally sourced ingredients. Open bar with indoor and outdoor seating.</p>
+                    <a href="{% url 'core:menu' %}" class="btn btn-outline-primary">View Menu</a>
+                </div>
+            </div>
+            
+            <!-- Fire Pit / BBQ Grill -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-fire text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">Fire Pit & BBQ Grill</h4>
+                    <p class="text-muted mb-3">Perfect for social stays and outdoor enjoyment. Gather around the fire for relaxed evenings under the stars.</p>
+                </div>
+            </div>
+            
+            <!-- Fully Equipped Kitchen -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-kitchen-set text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">Indoor Kitchen</h4>
+                    <p class="text-muted mb-3">Available for guests preferring to cook and dine in the comfort of their villa. Fully equipped with modern appliances.</p>
+                </div>
+            </div>
+            
+            <!-- High-Speed Internet -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-wifi text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">High-Speed WiFi</h4>
+                    <p class="text-muted mb-3">Complimentary high-speed internet access throughout the property. Stay connected during your stay.</p>
+                </div>
+            </div>
+            
+            <!-- Entertainment -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-tv text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">Smart Entertainment</h4>
+                    <p class="text-muted mb-3">Smart TVs with Netflix and YouTube, Bluetooth speakers for music lovers, and a sound system for the perfect ambiance.</p>
+                </div>
+            </div>
+            
+            <!-- Laundry Services -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-tshirt text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">Laundry Services</h4>
+                    <p class="text-muted mb-3">Available at pay, ensuring a hassle-free stay. Prices start from TSh 20,000 for up to 5 clothes.</p>
+                    <small class="text-muted">1-5 clothes: TSh 20,000 | 1-10: TSh 30,000 | 1-20: TSh 50,000</small>
+                </div>
+            </div>
+            
+            <!-- Outdoor Spaces -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-tree text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">Outdoor Seating & Garden</h4>
+                    <p class="text-muted mb-3">Comfortable chairs, a small table, and hammock set in a lush green garden surrounded by natural trees, offering serene views of Mount Meru.</p>
+                </div>
+            </div>
+            
+            <!-- Guided Experiences -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                <div class="service-item bg-light rounded p-4 text-center h-100">
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                        <i class="fa fa-bicycle text-white fa-3x"></i>
+                    </div>
+                    <h4 class="mb-3">Guided Experiences</h4>
+                    <p class="text-muted mb-3">Guided cycling experiences, art & painting sessions, local tours, and excursion arrangements available upon request.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Leisure Facilities Section -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container">
+        <div class="text-center wow fadeInUp mb-5">
+            <h6 class="section-title text-center text-primary text-uppercase">Leisure Facilities</h6>
+            <h1 class="mb-4">Relax & <span class="text-primary">Unwind</span></h1>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <img src="{% static 'img/pool.jpg' %}" class="card-img-top" alt="Swimming Pool" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center p-4">
+                        <h5>Swimming Pool</h5>
+                        <p class="text-muted">Beautifully lit at night, perfect for evening relaxation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <img src="{% static 'img/garden.jpg' %}" class="card-img-top" alt="Garden & Patio" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center p-4">
+                        <h5>Garden & Patio</h5>
+                        <p class="text-muted">Outdoor dining in peaceful garden spaces with Mount Meru views</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <img src="{% static 'img/bbq.jpg' %}" class="card-img-top" alt="BBQ Grill" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center p-4">
+                        <h5>BBQ Grill & Fire Pit</h5>
+                        <p class="text-muted">Cozy fire pit for relaxed evenings and social meals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="bg-white p-5 rounded shadow text-center">
+                    <h4 class="mb-3">Explore the Surroundings</h4>
+                    <p class="mb-4">Guests can explore the surrounding area through cycling, riding through scenic landscapes, local villages, and countryside paths with stunning Mount Meru views. The experience is further enhanced with Paint & Sip sessions, offering a creative and relaxing way to unwind in nature.</p>
+                    <a href="{% url 'core:attractions' %}" class="btn btn-primary">Discover Activities</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Transport Services -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp mb-5">
+            <h6 class="section-title text-center text-primary text-uppercase">Transport</h6>
+            <h1 class="mb-4">Getting Around <span class="text-primary">Arusha</span></h1>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-taxi text-white fa-2x"></i>
+                        </div>
+                        <h5>Online Taxis</h5>
+                        <p class="text-muted">We recommend using online taxi services like Indrive or Bolt. Safe, reliable, with clear pricing directly in the app.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-motorcycle text-white fa-2x"></i>
+                        </div>
+                        <h5>Piki Piki (Motorbikes)</h5>
+                        <p class="text-muted">Perfect for short distances. Drivers are usually available directly across the street. Have small cash notes ready.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-plane text-white fa-2x"></i>
+                        </div>
+                        <h5>Airport Transfers</h5>
+                        <p class="text-muted">We're happy to book your airport transfer(s). Just let us know your flight details in advance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WiFi Information -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5 text-center">
+                        <i class="fa fa-wifi fa-4x text-primary mb-4"></i>
+                        <h3 class="mb-4">Free High-Speed WiFi</h3>
+                        <div class="bg-white p-4 rounded border">
+                            <p class="mb-2"><strong>Network:</strong> <span class="text-primary">Airtel_X25 MAX2_F798</span></p>
+                            <p class="mb-0"><strong>Password:</strong> <code class="bg-light p-2">9C262A57</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/our_team.html' %}
+
+<!-- Call to Action -->
+<div class="container-xxl py-5 bg-primary">
+    <div class="container text-center">
+        <h2 class="text-white mb-4">Ready to Experience Daima Escape?</h2>
+        <p class="text-white mb-4">Book your stay today and discover the perfect blend of comfort, nature, and adventure.</p>
+        <a href="{% url 'booking:booking' %}" class="btn btn-light py-3 px-5 me-3">Book Now</a>
+        <a href="{% url 'core:contact' %}" class="btn btn-outline-light py-3 px-5">Contact Us</a>
+    </div>
+</div>
+
+<!-- Newsletter / Welcome Section -->
+<div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 border rounded p-1">
+            <div class="border rounded text-center p-1">
+                <div class="bg-white rounded text-center p-5">
+                    <h4 class="mb-4">Welcome to <span class="text-primary text-uppercase">Daima Escape</span></h4>
+                    <p class="mb-0">Your Timeless Getaway in the heart of nature</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

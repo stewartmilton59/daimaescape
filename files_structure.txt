@@ -1,0 +1,30 @@
+daima_escap_project/ (Main Settings Folder)
+├── manage.py
+├── daima_escap_project/ (Configuration)
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── core/ (App for static pages)
+│   ├── templates/core/
+│   │   ├── home.html
+│   │   ├── about.html
+│   │   ├── contact.html
+│   │   └── team.html
+|   |   |__ service.html
+|   |   |__ templates.html
+│   │   
+│   └── views.py
+├── rooms/ (App for managing hotel rooms)
+│   ├── templates/rooms/
+│   │   ├── room_list.html
+│   │   └── room_detail.html
+│   ├── models.py
+│   └── views.py
+├── bookings/ (App for handling reservations)
+│   ├── templates/bookings/
+│   │   └── booking_form.html
+│   ├── forms.py
+│   └── views.py
+└── templates/
+    ├── base.html (The layout with the Navbar)
+    └── partials/ (Small pieces like the Navbar and Footer)

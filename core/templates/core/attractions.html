@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Things to Do - Daimaescape{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
+  <div class="container-fluid page-header-inner py-5">
+    <div class="container text-center pb-5">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">Things to Do</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center text-uppercase">
+          <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">Attractions</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- National Parks Section -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp mb-5">
+      <h6 class="section-title text-center text-primary text-uppercase">Safari Adventures</h6>
+      <h1 class="mb-4">Explore <span class="text-primary">National Parks</span></h1>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow overflow-hidden">
+          <img src="{% static 'img/arusha-national-park.jpg' %}" class="card-img-top"
+            style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h4>Arusha National Park</h4>
+            <p class="text-muted"><i class="fa fa-map-marker-alt me-2"></i>3 km from property</p>
+            <p>Diverse ecosystems including Mount Meru, lush forests, and Momella Lakes. Game drives, walking safaris,
+              and canoeing adventures.</p>
+            <p><strong>Wildlife:</strong> Giraffes, buffaloes, zebras, flamingos</p>
+            <a href="#" class="btn btn-primary">Book Safari</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow overflow-hidden">
+          <img src="{% static 'img/tarangire.jpg' %}" class="card-img-top" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h4>Tarangire National Park</h4>
+            <p class="text-muted"><i class="fa fa-map-marker-alt me-2"></i>Full Day Trip</p>
+            <p>Famous for large elephant herds, baobab trees, and tree-climbing pythons. Excellent birdwatching.</p>
+            <p><strong>Duration:</strong> Full Day | <strong>Price:</strong> Upon Request</p>
+            <a href="#" class="btn btn-primary">Book Safari</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow overflow-hidden">
+          <img src="{% static 'img/ngorongoro.jpg' %}" class="card-img-top" style="height: 250px; object-fit: cover;">
+          <div class="card-body">
+            <h4>Ngorongoro Crater</h4>
+            <p class="text-muted"><i class="fa fa-map-marker-alt me-2"></i>Full Day Trip</p>
+            <p>UNESCO World Heritage site, the world's largest inactive volcanic caldera. Incredible wildlife density.
+            </p>
+            <p><strong>Duration:</strong> Full Day | <strong>Price:</strong> Upon Request</p>
+            <a href="#" class="btn btn-primary">Book Safari</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Waterfalls & Nature -->
+<div class="container-xxl py-5 bg-light">
+  <div class="container">
+    <div class="text-center wow fadeInUp mb-5">
+      <h6 class="section-title text-center text-primary text-uppercase">Nature Escapes</h6>
+      <h1 class="mb-4">Waterfalls & <span class="text-primary">Natural Wonders</span></h1>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow">
+          <img src="{% static 'img/chemka.jpg' %}" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5>Chemka Hot Springs</h5>
+            <p>Natural geothermal oasis with crystal clear waters. Swimming, rope swings, natural fish spa.</p>
+            <p><strong>Distance:</strong> 28 km | <strong>Temp:</strong> 27°C</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow">
+          <img src="{% static 'img/materuni.jpg' %}" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5>Materuni Waterfalls</h5>
+            <p>Spectacular waterfall in the foothills of Kilimanjaro. Combined with coffee tour experience.</p>
+            <p><strong>Duration:</strong> Half/Full Day</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow">
+          <img src="{% static 'img/lake-duluti.jpg' %}" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5>Lake Duluti</h5>
+            <p>Tranquil crater lake for canoeing and nature walks. Birdwatcher's paradise.</p>
+            <p><strong>Duration:</strong> Half/Full Day</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cultural Experiences -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp mb-5">
+      <h6 class="section-title text-center text-primary text-uppercase">Cultural Immersion</h6>
+      <h1 class="mb-4">Experience <span class="text-primary">Local Culture</span></h1>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card border-0 shadow mb-4">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{% static 'img/maasai.jpg' %}" class="img-fluid h-100" style="object-fit: cover;">
+            </div>
+            <div class="col-md-8 p-4">
+              <h4>Maasai Cultural Trip</h4>
+              <p>Visit authentic Maasai villages, learn about their traditions, dances, and way of life.</p>
+              <p><strong>Duration:</strong> Full Day | Upon Request</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 shadow mb-4">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{% static 'img/coffee-tour.jpg' %}" class="img-fluid h-100" style="object-fit: cover;">
+            </div>
+            <div class="col-md-8 p-4">
+              <h4>Coffee Plantation Tour</h4>
+              <p>See how coffee beans are grown, harvested, and processed. Enjoy fresh brewed coffee.</p>
+              <p><strong>Location:</strong> Scenic coffee plantation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action -->
+<div class="container-xxl py-5 bg-primary">
+  <div class="container text-center">
+    <h2 class="text-white mb-4">Ready to Explore?</h2>
+    <p class="text-white mb-4">Let us help you arrange the perfect day trips during your stay.</p>
+    <a href="{% url 'core:contact' %}" class="btn btn-light py-3 px-5">Contact Us for Arrangements</a>
+  </div>
+</div>
+<br><br><br><br><br>
+{% endblock %}

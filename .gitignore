@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django
+staticfiles/
+media/
+
+# Virtual env
+myvenv/
+.env
+
+# OS
+.DS_Store
+

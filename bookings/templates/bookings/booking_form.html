@@ -1,0 +1,360 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Your Stay - Daimaescape{% endblock %}
+
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center pb-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Book Your Stay</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Booking</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Booking Form Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="bg-light rounded p-5">
+                    <h2 class="mb-4">Booking Information</h2>
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <form method="post" class="booking-form">
+                        {% csrf_token %}
+                        
+                        <div class="row g-3">
+                            <!-- Room Selection -->
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Select Room</label>
+                                    {{ form.room }}
+                                    {% if form.room.errors %}
+                                        <div class="text-danger">{{ form.room.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Guest Information -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Full Name</label>
+                                    {{ form.guest_name }}
+                                    {% if form.guest_name.errors %}
+                                        <div class="text-danger">{{ form.guest_name.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Email Address</label>
+                                    {{ form.guest_email }}
+                                    {% if form.guest_email.errors %}
+                                        <div class="text-danger">{{ form.guest_email.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Phone Number</label>
+                                    {{ form.guest_phone }}
+                                    {% if form.guest_phone.errors %}
+                                        <div class="text-danger">{{ form.guest_phone.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Address</label>
+                                    {{ form.guest_address }}
+                                    {% if form.guest_address.errors %}
+                                        <div class="text-danger">{{ form.guest_address.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Booking Dates -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Check-in Date</label>
+                                    {{ form.check_in_date }}
+                                    {% if form.check_in_date.errors %}
+                                        <div class="text-danger">{{ form.check_in_date.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Check-out Date</label>
+                                    {{ form.check_out_date }}
+                                    {% if form.check_out_date.errors %}
+                                        <div class="text-danger">{{ form.check_out_date.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Guests -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Adults</label>
+                                    {{ form.adults }}
+                                    {% if form.adults.errors %}
+                                        <div class="text-danger">{{ form.adults.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Children</label>
+                                    {{ form.children }}
+                                    {% if form.children.errors %}
+                                        <div class="text-danger">{{ form.children.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Special Requests -->
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Special Requests</label>
+                                    {{ form.special_requests }}
+                                    {% if form.special_requests.errors %}
+                                        <div class="text-danger">{{ form.special_requests.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Terms and Conditions -->
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terms" required>
+                                    <label class="form-check-label" for="terms">
+                                        I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">terms and conditions</a> and <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">privacy policy</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-3">Complete Booking</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Booking Summary Sidebar -->
+            <div class="col-lg-4">
+                <div class="bg-light rounded p-4 mb-4">
+                    <h4 class="mb-3">Booking Summary</h4>
+                    <p class="text-muted mb-3">Your selected room details will appear here</p>
+                    
+                    <div id="booking-summary" class="d-none">
+                        <div class="d-flex align-items-center mb-3">
+                            <img id="summary-room-image" src="" alt="" class="rounded" style="width: 80px; height: 80px; object-fit: cover;">
+                            <div class="ms-3">
+                                <h5 id="summary-room-name" class="mb-1"></h5>
+                                <p id="summary-room-price" class="text-primary mb-0"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="border-top pt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Check-in:</span>
+                                <span id="summary-checkin" class="fw-bold"></span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Check-out:</span>
+                                <span id="summary-checkout" class="fw-bold"></span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Nights:</span>
+                                <span id="summary-nights" class="fw-bold"></span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Guests:</span>
+                                <span id="summary-guests" class="fw-bold"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="border-top pt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal:</span>
+                                <span id="summary-subtotal" class="fw-bold"></span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Tax (18%):</span>
+                                <span id="summary-tax" class="fw-bold"></span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Total:</span>
+                                <span id="summary-total" class="fw-bold text-primary h5 mb-0"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="no-selection-message" class="text-center py-4">
+                        <i class="fa fa-info-circle text-primary mb-3" style="font-size: 3rem;"></i>
+                        <p>Please select a room and dates to see the summary</p>
+                    </div>
+                </div>
+                
+                <!-- Need Help -->
+                <div class="bg-primary text-white rounded p-4">
+                    <h5 class="text-white mb-3">Need Help?</h5>
+                    <p class="mb-3">Our team is here to assist you with your booking.</p>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fa fa-phone-alt me-3"></i>
+                        <span>+255 754 374 842</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-envelope me-3"></i>
+                        <span>bookings@daimaescape.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Booking Form End -->
+
+<!-- Terms Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Terms and Conditions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h6>1. Booking Policy</h6>
+                <p>All bookings are subject to availability. A valid ID and credit card are required at check-in.</p>
+                
+                <h6>2. Payment</h6>
+                <p>Full payment is required at check-in unless otherwise agreed. We accept cash, credit cards, and mobile money.</p>
+                
+                <h6>3. Cancellation</h6>
+                <p>Cancellations made 48 hours before check-in are free. Late cancellations may incur a fee of one night's stay.</p>
+                
+                <h6>4. Check-in/Check-out</h6>
+                <p>Check-in time: 2:00 PM | Check-out time: 11:00 AM</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Privacy Modal -->
+<div class="modal fade" id="privacyModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Privacy Policy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Your privacy is important to us. We collect and use your information only for booking purposes and will never share it with third parties without your consent.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Booking Summary JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const roomSelect = document.getElementById('{{ form.room.id_for_label }}');
+    const checkIn = document.getElementById('{{ form.check_in_date.id_for_label }}');
+    const checkOut = document.getElementById('{{ form.check_out_date.id_for_label }}');
+    const adults = document.getElementById('{{ form.adults.id_for_label }}');
+    const children = document.getElementById('{{ form.children.id_for_label }}');
+    
+    const summaryDiv = document.getElementById('booking-summary');
+    const noSelectionDiv = document.getElementById('no-selection-message');
+    
+    function updateSummary() {
+        if (roomSelect.value && checkIn.value && checkOut.value) {
+            // Get selected room data
+            const selectedOption = roomSelect.options[roomSelect.selectedIndex];
+            const roomName = selectedOption.text;
+            const roomPrice = selectedOption.dataset.price;
+            const roomImage = selectedOption.dataset.image;
+            
+            // Calculate nights
+            const checkInDate = new Date(checkIn.value);
+            const checkOutDate = new Date(checkOut.value);
+            const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
+            
+            // Calculate totals
+            const subtotal = nights * parseFloat(roomPrice);
+            const tax = subtotal * 0.18;
+            const total = subtotal + tax;
+            
+            // Update summary
+            document.getElementById('summary-room-name').textContent = roomName;
+            document.getElementById('summary-room-price').textContent = `$${roomPrice}/night`;
+            document.getElementById('summary-room-image').src = roomImage;
+            document.getElementById('summary-checkin').textContent = checkIn.value;
+            document.getElementById('summary-checkout').textContent = checkOut.value;
+            document.getElementById('summary-nights').textContent = nights;
+            document.getElementById('summary-guests').textContent = `${adults.value} Adult${adults.value > 1 ? 's' : ''}${children.value > 0 ? `, ${children.value} Child${children.value > 1 ? 'ren' : ''}` : ''}`;
+            document.getElementById('summary-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('summary-tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('summary-total').textContent = `$${total.toFixed(2)}`;
+            
+            summaryDiv.classList.remove('d-none');
+            noSelectionDiv.classList.add('d-none');
+        } else {
+            summaryDiv.classList.add('d-none');
+            noSelectionDiv.classList.remove('d-none');
+        }
+    }
+    
+    roomSelect.addEventListener('change', updateSummary);
+    checkIn.addEventListener('change', updateSummary);
+    checkOut.addEventListener('change', updateSummary);
+    adults.addEventListener('change', updateSummary);
+    children.addEventListener('change', updateSummary);
+});
+</script>
+
+<!-- Add data attributes to room options -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const roomSelect = document.getElementById('{{ form.room.id_for_label }}');
+    {% for room in form.room.field.queryset %}
+        const option = roomSelect.querySelector('option[value="{{ room.id }}"]');
+        if (option) {
+            option.dataset.price = "{{ room.get_discounted_price }}";
+            {% if room.main_image %}
+                option.dataset.image = "{{ room.main_image.url }}";
+            {% else %}
+                option.dataset.image = "{% static 'img/room-default.jpg' %}";
+            {% endif %}
+        }
+    {% endfor %}
+});
+</script>
+<br><br><br>
+{% endblock %}

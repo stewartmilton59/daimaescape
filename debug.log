@@ -1,0 +1,2356 @@
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 17, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 39, in home
+    return render(request, 'core/home.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/one-bedroom-villa.jpg'
+"GET / HTTP/1.1" 500 4480
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 43, in about
+    return render(request, 'core/about.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /about/ HTTP/1.1" 500 4480
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 43, in about
+    return render(request, 'core/about.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /about/ HTTP/1.1" 500 4480
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 43, in about
+    return render(request, 'core/about.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /about/ HTTP/1.1" 500 4480
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 43, in about
+    return render(request, 'core/about.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /about/ HTTP/1.1" 500 4480
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 43, in about
+    return render(request, 'core/about.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /about/ HTTP/1.1" 500 4480
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 51, in service
+    return render(request, 'core/service.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /service/ HTTP/1.1" 500 4480
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 43, in about
+    return render(request, 'core/about.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /about/ HTTP/1.1" 500 4480
+Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 43, in about
+    return render(request, 'core/about.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/about-5.jpg'
+"GET /about/ HTTP/1.1" 500 4480
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 51, in service
+    return render(request, 'core/service.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/pool.jpg'
+"GET /service/ HTTP/1.1" 500 4480
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 51, in service
+    return render(request, 'core/service.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/pool.jpg'
+"GET /service/ HTTP/1.1" 500 4480
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 51, in service
+    return render(request, 'core/service.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/pool.jpg'
+"GET /service/ HTTP/1.1" 500 4480
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 51, in service
+    return render(request, 'core/service.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/pool.jpg'
+"GET /service/ HTTP/1.1" 500 4480
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 51, in service
+    return render(request, 'core/service.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/pool.jpg'
+"GET /service/ HTTP/1.1" 500 4480
+Internal Server Error: /menu/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 71, in menu
+    return render(request, 'core/menu.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /menu/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/arusha-national-park.jpg'
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/arusha-national-park.jpg'
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/arusha-national-park.jpg'
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/tarangire.jpg'
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/ngorongoro.jpg'
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/chemka.jpg'
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /attractions/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/core/views.py", line 76, in attractions
+    return render(request, 'core/attractions.html')
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'contact' not found. 'contact' is not a valid view function or pattern name.
+"GET /attractions/ HTTP/1.1" 500 4480
+Internal Server Error: /rooms/room/classic-room/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/rooms/views.py", line 64, in room_detail
+    return render(request, 'rooms/room_detail.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /rooms/room/classic-room/ HTTP/1.1" 500 4480
+Internal Server Error: /booking/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/bookings/views.py", line 32, in booking
+    booking.price_per_night = room.get_discounted_price()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Room' object has no attribute 'get_discounted_price'. Did you mean: 'get_discounted_price_tzs'?
+"POST /booking/ HTTP/1.1" 500 4480
+Internal Server Error: /booking/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/bookings/views.py", line 38, in booking
+    booking.subtotal = booking.price_per_night * nights
+                       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+TypeError: unsupported operand type(s) for *: 'method' and 'int'
+"POST /booking/ HTTP/1.1" 500 4480
+Internal Server Error: /booking/success/280226-BB7G1/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/bookings/views.py", line 98, in booking_success
+    return render(request, 'bookings/booking_success.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /booking/success/280226-BB7G1/ HTTP/1.1" 500 4480
+Internal Server Error: /booking/success/280226-U35R1/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/bookings/views.py", line 98, in booking_success
+    return render(request, 'bookings/booking_success.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /booking/success/280226-U35R1/ HTTP/1.1" 500 4480
+Internal Server Error: /booking/detail/280226-U35R1/
+Traceback (most recent call last):
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/stewart/Public/daimaescape/bookings/views.py", line 108, in booking_detail
+    return render(request, 'bookings/booking_detail.html', context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 116, in render
+    url = self.url(context)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/templatetags/static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 205, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 184, in _url
+    hashed_name = hashed_name_func(*args)
+  File "/home/stewart/Public/daimaescape/myvenv/lib/python3.14/site-packages/django/contrib/staticfiles/storage.py", line 524, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'img/carousel-1.jpg'
+"GET /booking/detail/280226-U35R1/ HTTP/1.1" 500 4480
