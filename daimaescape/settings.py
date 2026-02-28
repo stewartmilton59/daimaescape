@@ -38,9 +38,7 @@ DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    os.environ.get('RAILWAY_PUBLIC_DOMAIN', ''),
-    'daimaescape.up.railway.app',
-    'www.daimaescape.up.railway.app'
+    os.environ.get('RAILWAY_PUBLIC_DOMAIN', 'daimaescape.up.railway.app')
 ]
 
 # Application definition
