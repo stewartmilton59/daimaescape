@@ -35,7 +35,7 @@ SECRET_KEY = env(
 # Control DEBUG via environment variable
 DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['daimaescape.up.railway.app'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['daimaescape.up.railway.app', 'www.daimaescape.up.railway.app'])
 
 # Application definition
 INSTALLED_APPS = [
