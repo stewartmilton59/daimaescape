@@ -30,6 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['daimaescape.up.railway.app', 'www.daimaescape.up.railway.app,]
 
+CSRF_TRUSTED_ORIGINS = ['https://daimaescape.up.railway.app', 'https://www.daimaescape.up.railway.app']
 
 # Application definition
 
