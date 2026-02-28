@@ -14,41 +14,39 @@ from django.utils.translation import gettext_lazy as _
 from django.templatetags.static import static
 from pathlib import Path
 import os
-import environ  # Add this for environment variables
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Initialize environment variables
 env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+# Only read .env file if it exists (local development)
+if os.path.exists(os.path.join(BASE_DIR, '.env')):
+    environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Use environment variable in production, fallback for development
-SECRET_KEY = env(
-    'SECRET_KEY', default='django-insecure-m4dw1&-sm+0yt^^v+$xdkm0!j_esr#3%rr=7%y&y95hn%6ig1h')
+SECRET_KEY = env('SECRET_KEY', default='django-insecure-m4dw1&-sm+0yt^^v+$xdkm0!j_esr#3%rr=7%y&y95hn%6ig1h')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Control DEBUG via environment variable
 DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['daimaescape.up.railway.app']
+# Railway automatically sets RAILWAY_PUBLIC_DOMAIN, but we also allow custom domains via ALLOWED_HOSTS
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['daimaescape.up.railway.app'])
 
 # Application definition
 INSTALLED_APPS = [
     "unfold",
-    "unfold.contrib.filters",  # optional, if special filters are needed
-    "unfold.contrib.forms",  # optional, if special form elements are needed
-    "unfold.contrib.inlines",  # optional, if special inlines are needed
-    "unfold.contrib.import_export",  # optional, if django-import-export package is used
-    "unfold.contrib.guardian",  # optional, if django-guardian package is used
-    # optional, if django-simple-history package is used
-    "unfold.contrib.simple_history",
-    # optional, if django-location-field package is used
-    "unfold.contrib.location_field",
+    "unfold.contrib.filters",          # optional, if special filters are needed
+    "unfold.contrib.forms",             # optional, if special form elements are needed
+    "unfold.contrib.inlines",           # optional, if special inlines are needed
+    "unfold.contrib.import_export",     # optional, if django-import-export package is used
+    "unfold.contrib.guardian",          # optional, if django-guardian package is used
+    "unfold.contrib.simple_history",    # optional, if django-simple-history package is used
+    "unfold.contrib.location_field",    # optional, if django-location-field package is used
     "unfold.contrib.constance",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,8 +62,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # For serving static files in production
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # For serving static files in production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -86,8 +83,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',  # Add for media files
-                'django.template.context_processors.static',  # Add for static files
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -97,30 +94,22 @@ WSGI_APPLICATION = 'daimaescape.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-# Use environment variable for database URL in production
+# Use DATABASE_URL environment variable (automatically set by Railway Postgres plugin)
 DATABASES = {
     'default': env.db('DATABASE_URL', default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'))
 }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'Africa/Dar_es_Salaam'  # Set to Tanzania time
+TIME_ZONE = 'Africa/Dar_es_Salaam'
 USE_I18N = True
 USE_TZ = True
 
@@ -146,7 +135,7 @@ STORAGES = {
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Admin settings
+# Admin settings (Unfold)
 UNFOLD = {
     "SITE_TITLE": "Daimaescape",
     "SITE_HEADER": "Daimaescape Dashboard",
@@ -159,24 +148,19 @@ UNFOLD = {
         },
     ],
     "SITE_ICON": {
-        "light": lambda request: static("logo.png"),  # light mode
-        "dark": lambda request: static("logo.png"),  # dark mode
+        "light": lambda request: static("logo.png"),
+        "dark": lambda request: static("logo.png"),
     },
     "LOGIN": {
         "image": lambda request: static("logo.png"),
     },
 }
 
-# Logging configuration
+# Logging configuration – console only for production (Railway captures logs)
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
-        'file': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'debug.log',
-        },
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
@@ -184,7 +168,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': True,
         },
@@ -193,7 +177,7 @@ LOGGING = {
 
 # Security settings for production
 if not DEBUG:
-    # HTTPS settings
+    # HTTPS settings – Railway provides SSL by default
     SECURE_SSL_REDIRECT = env.bool('SECURE_SSL_REDIRECT', default=True)
     SESSION_COOKIE_SECURE = env.bool('SESSION_COOKIE_SECURE', default=True)
     CSRF_COOKIE_SECURE = env.bool('CSRF_COOKIE_SECURE', default=True)
@@ -204,5 +188,5 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
     X_FRAME_OPTIONS = 'DENY'
 
-    # Trusted origins for CSRF
-    CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=[])
+    # Trusted origins for CSRF – add your Railway domain and any custom domains
+    CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=['https://daimaescape.up.railway.app'])
