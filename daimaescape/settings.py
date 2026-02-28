@@ -2,30 +2,19 @@ from django.utils.translation import gettext_lazy as _
 from django.templatetags.static import static
 from pathlib import Path
 import os
-import environ  # Add this for environment variables
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Initialize environment variables
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Use environment variable in production, fallback for development
-SECRET_KEY = env(
-    'SECRET_KEY', default='django-insecure-m4dw1&-sm+0yt^^v+$xdkm0!j_esr#3%rr=7%y&y95hn%6ig1h')
+SECRET_KEY ='django-insecure-m4dw1&-sm+0yt^^v+$xdkm0!j_esr#3%rr=7%y&y95hn%6ig1h'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# Control DEBUG via environment variable
-DEBUG = env.bool('DEBUG', default=False)
-
-# For local testing with DEBUG=False, allow all hosts
-# In production, this should be your domain
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'daimaescape.up.railway.app']
  # Trusted origins for CSRF
  CSRF_TRUSTED_ORIGINS = ['https://daimaescape.up.railway.app']
 
