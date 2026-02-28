@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-l=#(6%x%6z2&w!^27s-nmnxh&qks11bj%wd^%!!f6ld+g+pz3n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['daimaescape.up.railway.app']
+ALLOWED_HOSTS = ['daimaescape.up.railway.app', 'www.daimaescape.up.railway.app,]
 
 
 # Application definition
