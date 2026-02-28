@@ -25,8 +25,9 @@ DEBUG = env.bool('DEBUG', default=False)
 
 # For local testing with DEBUG=False, allow all hosts
 # In production, this should be your domain
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[
-                         'daimaescape.up.railway.app', 'localhost', '127.0.0.1'])
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ # Trusted origins for CSRF
+ CSRF_TRUSTED_ORIGINS = ['https://daimaescape.up.railway.app']
 
 # Application definition
 INSTALLED_APPS = [
@@ -182,18 +183,3 @@ LOGGING = {
     },
 }
 
-# Security settings for production
-if not DEBUG:
-    # HTTPS settings
-    SECURE_SSL_REDIRECT = env.bool('SECURE_SSL_REDIRECT', default=True)
-    SESSION_COOKIE_SECURE = env.bool('SESSION_COOKIE_SECURE', default=True)
-    CSRF_COOKIE_SECURE = env.bool('CSRF_COOKIE_SECURE', default=True)
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_HSTS_SECONDS = env.int('SECURE_HSTS_SECONDS', default=31536000)
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
-    X_FRAME_OPTIONS = 'DENY'
-
-    # Trusted origins for CSRF
-    CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=[])
