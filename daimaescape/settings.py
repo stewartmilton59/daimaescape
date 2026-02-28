@@ -35,10 +35,7 @@ SECRET_KEY = env(
 # Control DEBUG via environment variable
 DEBUG = env.bool('DEBUG', default=False)
 
-# For local testing with DEBUG=False, allow all hosts
-# In production, this should be your domain
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[
-                         '*', 'localhost', '127.0.0.1'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['daimaescape.up.railway.app'])
 
 # Application definition
 INSTALLED_APPS = [
