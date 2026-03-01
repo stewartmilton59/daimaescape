@@ -16,6 +16,9 @@ from pathlib import Path
 import dj_database_url
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -100,18 +103,18 @@ WSGI_APPLICATION = 'daimaescape.wsgi.application'
 #     }
 # }
 
-if os.getenv('DATABASE_URL'):
-    DATABASES = {
-        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-    }
-else:
-    # Fallback to SQLite for local development
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': os.getenv("DB_NAME"),
+         'USER': os.getenv("DB_USER"),
+         'PASSWORD': os.getenv("DB_PASSWORD"),
+         'HOST': os.getenv("DB_HOST"),
+         'PORT': os.getenv("DB_PORT"),
+     }
+}
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

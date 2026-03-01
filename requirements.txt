@@ -1,7 +1,9 @@
 asgiref==3.11.1
 diff-match-patch==20241021
+dj-database-url==2.1.0
 Django==6.0.2
 django-constance==4.3.4
+django-environ==0.11.2
 django-guardian==3.3.0
 django-import-export==4.4.0
 django-jazzmin==3.0.3
@@ -11,9 +13,8 @@ gunicorn==25.1.0
 packaging==26.0
 pillow==12.1.1
 psycopg2-binary==2.9.11
+python-dotenv==1.2.2
 sqlparse==0.5.5
 tablib==3.9.0
+typing_extensions==4.15.0
 whitenoise==6.11.0
-django-environ==0.11.2
-dj-database-url==2.1.0
-psycopg2-binary
