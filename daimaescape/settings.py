@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'daimaescape.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL','postgresql://postgres:QMXsxhlDKnLHrgDiLemfYBLabQqyRoia@shortline.proxy.rlwy.net:25580/railway'),
+        default=os.environ.get('DATABASE_URL'),
         conn_max_age=600,
         ssl_require=True
     )
