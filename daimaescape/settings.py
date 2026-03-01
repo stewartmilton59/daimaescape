@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import dj_database_url
+
 from django.utils.translation import gettext_lazy as _
 from django.templatetags.static import static
 from pathlib import Path
@@ -92,21 +92,21 @@ WSGI_APPLICATION = 'daimaescape.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Postgres DB_CONFGARATIONS
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('postgresql://postgres:QMXsxhlDKnLHrgDiLemfYBLabQqyRoia@postgres.railway.internal:5432/railway'),
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('postgresql://postgres:QMXsxhlDKnLHrgDiLemfYBLabQqyRoia@postgres.railway.internal:5432/railway'),
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     )
+# }
 
 
 # Password validation
