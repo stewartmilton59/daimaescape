@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from django.utils.translation import gettext_lazy as _
 from django.templatetags.static import static
 from pathlib import Path
-#import dj_database_url
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -101,13 +101,10 @@ WSGI_APPLICATION = 'daimaescape.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'data/db.sqlite3', # Must be in a persistent volume
-        'OPTIONS': {
-            'timeout': 30, # Increases wait time in seconds
-        }
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600
+    )
 }
 
 
