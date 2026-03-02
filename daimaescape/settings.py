@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l=#(6%x%6z2&w!^27s-nmnxh&qks11bj%wd^%!!f6ld+g+pz3n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['daimaescape.up.railway.app', 'www.daimaescape.up.railway.app']
 
@@ -83,8 +83,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',  # Add for media files
-                'django.template.context_processors.static',  # Add for static files
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
         },
     },
