@@ -53,16 +53,17 @@
       <h1 class="mb-5">Choose Your <span class="text-primary text-uppercase">Private Escape</span></h1>
     </div>
     <div class="row g-4">
+      <!-- First Villa Card -->
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="card border-0 shadow overflow-hidden">
-          <div class="row g-0">
-            <div class="col-md-6">
-              <img src="{% static 'img/one-bedroom-villa.jpg' %}" class="img-fluid h-100" style="object-fit: cover; height: 300px !important;" alt="One-Bedroom Villa">
+        <div class="card border-0 shadow overflow-hidden h-100"> <!-- Added h-100 to card so it matches height if in a row -->
+          <div class="row g-0 h-100"> <!-- Added h-100 to inner row -->
+            <div class="col-md-6 h-100"> <!-- Added h-100 here to stretch column to text height -->
+              <!-- Removed height:300px, added w-100 h-100 -->
+              <img src="{% static 'img/one-bedroom-villa.jpg' %}" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="One-Bedroom Villa">
             </div>
-            <div class="col-md-6 p-4">
+            <div class="col-md-6 p-4 d-flex flex-column justify-content-center"> <!-- Added flex classes for better text alignment -->
               <h4 class="text-primary">One-Bedroom Villa</h4>
               <h3 class="mb-3">Cozy Retreat for Couples</h3>
-              <!-- <p class="mb-3">Perfect for couples seeking intimacy and privacy. Features a comfortable bedroom, modern living area, and fully equipped kitchen.</p> -->
               <ul class="list-unstyled mb-4">
                 <li><i class="fa fa-check text-primary me-2"></i>King-size bed with quality linen</li>
                 <li><i class="fa fa-check text-primary me-2"></i>Private bathroom with hot shower</li>
@@ -74,31 +75,9 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="card border-0 shadow overflow-hidden">
-          <div class="row g-0">
-            <div class="col-md-6">
-              <img src="{% static 'img/two-bedroom-villa.jpg' %}" class="img-fluid h-100" style="object-fit: cover; height: 300px !important;" alt="Two-Bedroom Villa">
-            </div>
-            <div class="col-md-6 p-4">
-              <h4 class="text-primary">Two-Bedroom Villa</h4>
-              <h3 class="mb-3">Spacious Family Home</h3>
-              <!-- <p class="mb-3">Accommodates up to 6 guests. Ideal for families or small groups seeking space and comfort in nature.</p> -->
-              <ul class="list-unstyled mb-4">
-                <li><i class="fa fa-check text-primary me-2"></i>Two bedrooms with quality linen</li>
-                <li><i class="fa fa-check text-primary me-2"></i>Two bathrooms with hot showers</li>
-                <li><i class="fa fa-check text-primary me-2"></i>Living and dining area</li>
-                <li><i class="fa fa-check text-primary me-2"></i>Private backyard with BBQ grill</li>
-              </ul>
-              <a href="{% url 'rooms:room_list' %}?type=two_bedroom" class="btn btn-primary">View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Villa Types End -->
+
+      <!-- Second Villa Card -->
+      <div class="col-lg-6 wow fadeInUp
 
 {% include 'partials/about_us.html' %}
 {% include 'partials/gallery.html' %}
