@@ -1,150 +1,94 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}{{ room.name }} - Daimaescape{% endblock %}
-
 {% block content %}
 
-<!-- Page Header Start -->
-<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/carousel-01.jpg' %});">
-  <div class="container-fluid page-header-inner py-5">
-    <div class="container text-center pb-5">
-      <h1 class="display-3 text-white mb-3 animated slideInDown">{{ room.name }}</h1>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-center text-uppercase">
-          <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
-          <li class="breadcrumb-item"><a href="{% url 'rooms:room_list' %}">Rooms</a></li>
-          <li class="breadcrumb-item text-white active" aria-current="page">{{ room.name }}</li>
-        </ol>
-      </nav>
-    </div>
+<!-- Luxury Page Header -->
+<div class="container-fluid page-header mb-5 p-0"
+     style="background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+     url({% static 'img/one-bedroom-villa.jpg' %});
+     background-size: cover;
+     background-position: center;">
+
+  <div class="container text-center py-5">
+    <h1 class="display-4 text-white mb-3">Executive One Bedroom Villa</h1>
+    <p class="text-white">Luxury • Privacy • Comfort</p>
   </div>
 </div>
-<!-- Page Header End -->
 
-<!-- Room Detail Start -->
+
+<!-- Room Detail Section -->
 <div class="container-xxl py-5">
   <div class="container">
     <div class="row g-5">
-      <!-- Room Images -->
+
+      <!-- Images Section -->
       <div class="col-lg-8">
+
+        <img src="{% static 'img/one-bedroom-villa.jpg' %}"
+             class="img-fluid rounded mb-4 w-100"
+             style="height: 450px; object-fit: cover;">
+
         <div class="row g-3">
-          <div class="col-12">
-            {% if room.main_image %}
-            <img class="img-fluid rounded w-100" src="{{ room.main_image.url }}" alt="{{ room.name }}"
-              style="max-height: 500px; object-fit: cover;">
-            {% else %}
-            <img class="img-fluid rounded w-100" src="{% static 'img/room-default.jpg' %}" alt="{{ room.name }}"
-              style="max-height: 500px; object-fit: cover;">
-            {% endif %}
+          <div class="col-4">
+            <img src="{% static 'img/family-villa.jpg' %}"
+                 class="img-fluid rounded"
+                 style="height: 150px; object-fit: cover;">
           </div>
-          {% for image in room.additional_images.all %}
-          {% if forloop.counter < 4 %} <div class="col-4">
-            <img class="img-fluid rounded" src="{{ image.image.url }}" alt="{{ image.caption|default:room.name }}"
-              style="height: 150px; width: 100%; object-fit: cover;">
-        </div>
-        {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <!-- Room Info -->
-    <div class="col-lg-4">
-      <div class="bg-light rounded p-4">
-        <h2 class="mb-4">{{ room.name }}</h2>
-        <div class="d-flex mb-3">
-          {% for i in "12345"|make_list %}
-          {% if forloop.counter <= room.rating %} <small class="fa fa-star text-primary"></small>
-            {% else %}
-            <small class="fa fa-star text-secondary"></small>
-            {% endif %}
-            {% endfor %}
-            <small class="ms-2">({{ room.total_reviews }} reviews)</small>
-        </div>
-
-        <div class="d-flex mb-4">
-          <h3 class="text-primary mb-0">
-            {% if room.discount_percent > 0 %}
-            <span class="text-decoration-line-through text-muted fs-5">Tzsh{{ room.price_per_night }}</span>
-            Tzsh{{ room.get_discounted_price|floatformat:0 }}
-            {% else %}
-            Tzsh{{ room.price_per_night }}
-            {% endif %}
-            <small class="text-body fw-normal">/ Night</small>
-          </h3>
-        </div>
-
-        <div class="mb-4">
-          <h5>Room Details</h5>
-          <div class="d-flex flex-wrap gap-3">
-            <span><i class="fa fa-users text-primary me-2"></i>{{ room.max_guests }} Guests</span>
-            <span><i class="fa fa-bed text-primary me-2"></i>{{ room.beds }} {{ room.get_bed_type_display }}</span>
-            <span><i class="fa fa-bath text-primary me-2"></i>{{ room.bathrooms }} Bathroom</span>
-            <span><i class="fa fa-door-open text-primary me-2"></i>{{ room.bedrooms }} Bedroom</span>
+          <div class="col-4">
+            <img src="{% static 'img/executive-villa.jpg' %}"
+                 class="img-fluid rounded"
+                 style="height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-4">
+            <img src="{% static 'img/carousel-01.jpg' %}"
+                 class="img-fluid rounded"
+                 style="height: 150px; object-fit: cover;">
           </div>
         </div>
 
-        <div class="mb-4">
-          <h5>Amenities</h5>
-          <div class="d-flex flex-wrap gap-2">
-            {% if room.has_wifi %}<span class="badge bg-primary"><i class="fa fa-wifi me-1"></i>WiFi</span>{% endif %}
-            {% if room.has_tv %}<span class="badge bg-primary"><i class="fa fa-tv me-1"></i>TV</span>{% endif %}
-            {% if room.has_ac %}<span class="badge bg-primary"><i class="fa fa-wind me-1"></i>A/C</span>{% endif %}
-            {% if room.has_minibar %}<span class="badge bg-primary"><i class="fa fa-glass me-1"></i>Mini Bar</span>{% endif %}
-            {% if room.has_safe %}<span class="badge bg-primary"><i class="fa fa-lock me-1"></i>Safe</span>{% endif %}
-            {% if room.has_balcony %}<span class="badge bg-primary"><i class="fa fa-tree me-1"></i>Balcony</span>{% endif %}
+      </div>
+
+
+      <!-- Booking Card -->
+      <div class="col-lg-4">
+        <div class="booking-card p-4 rounded shadow">
+
+          <h2 class="mb-3">TZS 120,000 <small class="text-muted fs-6">/ Night</small></h2>
+
+          <div class="mb-4 text-muted">
+            <i class="fa fa-users text-primary me-2"></i>2 Guests<br>
+            <i class="fa fa-bed text-primary me-2"></i>1 King Bed<br>
+            <i class="fa fa-bath text-primary me-2"></i>1 Bathroom<br>
+            <i class="fa fa-wifi text-primary me-2"></i>Free WiFi<br>
+            <i class="fa fa-wind text-primary me-2"></i>Air Conditioning
           </div>
+
+          <a href="#" class="btn btn-primary w-100 py-3 mb-3 rounded-pill">
+            Book Now
+          </a>
+
+          <a href="{% url 'rooms:room_list' %}" 
+             class="btn btn-outline-primary w-100 rounded-pill">
+            Back to Rooms
+          </a>
+
         </div>
-
-        <a href="{% url 'booking:booking' %}?room={{ room.slug }}" class="btn btn-primary w-100 py-3 mb-3">Book This
-          Room</a>
-        <a href="{% url 'rooms:room_list' %}" class="btn btn-outline-primary w-100 py-2">View Other Rooms</a>
       </div>
-    </div>
 
-    <!-- Description -->
-    <div class="col-12">
-      <div class="bg-light rounded p-4">
-        <h4 class="mb-3">Description</h4>
-        <p>{{ room.description|linebreaks }}</p>
-      </div>
-    </div>
-
-    <!-- Similar Rooms -->
-    {% if similar_rooms %}
-    <div class="col-12">
-      <h3 class="mb-4">Similar Rooms You Might Like</h3>
-      <div class="row g-4">
-        {% for similar in similar_rooms %}
-        <div class="col-lg-4 col-md-6">
-          <div class="room-item shadow rounded overflow-hidden">
-            <div class="position-relative">
-              {% if similar.main_image %}
-              <img class="img-fluid" src="{{ similar.main_image.url }}" alt="{{ similar.name }}"
-                style="width: 100%; height: 200px; object-fit: cover;">
-              {% else %}
-              <img class="img-fluid" src="{% static 'img/room-default.jpg' %}" alt="{{ similar.name }}"
-                style="width: 100%; height: 200px; object-fit: cover;">
-              {% endif %}
-              <small
-                class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
-                Tzsh{{ similar.price_per_night }}/Night
-              </small>
-            </div>
-            <div class="p-3">
-              <h5 class="mb-2">{{ similar.name }}</h5>
-              <p class="text-body mb-2">{{ similar.short_description|truncatechars:60 }}</p>
-              <a href="{% url 'rooms:room_detail' similar.slug %}" class="btn btn-sm btn-primary">View Details</a>
-            </div>
-          </div>
+      <!-- Description -->
+      <div class="col-12 mt-5">
+        <div class="bg-light rounded p-4">
+          <h4 class="mb-3">About This Villa</h4>
+          <p class="text-muted">
+            Experience unmatched comfort in our Executive One Bedroom Villa.
+            Designed for couples and private escapes, this villa offers a king-size
+            bed, fully equipped kitchen, elegant bathroom, and serene garden views.
+            Enjoy complete privacy, modern amenities, and premium comfort in a
+            peaceful environment at Daimaescape.
+          </p>
         </div>
-        {% endfor %}
       </div>
+
     </div>
-    {% endif %}
   </div>
 </div>
-</div>
-<!-- Room Detail End -->
-<br><br><br><br>
+
 {% endblock %}
