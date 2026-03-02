@@ -586,3 +586,26 @@
     font-size: 16px;
 }
 /* Price on the image end */
+
+
+.room-card {
+    transition: 0.3s ease;
+    background: #fff;
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.price-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+}
