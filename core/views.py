@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from rooms.models import Room, HouseRule, LaundryService
 
 
 def home(request):
