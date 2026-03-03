@@ -1,11 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="container py-5">
+    <div class="text-center mb-5">
+        <h6 class="text-uppercase text-orange fw-bold">Luxury Living</h6>
+        <h2 class="display-5 fw-bold">Our Classic Villas</h2>
+        <p class="text-muted">Experience elegance, comfort and privacy at Daimaescape</p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Villa 1 -->
+        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="villa-card shadow-lg rounded overflow-hidden">
+                <div class="position-relative">
+                    <img src="{% static 'img/villa1.jpg' %}" class="img-fluid w-100 villa-img" alt="Classic Villa">
+                    
+                    <div class="price-badge">
+                        Tsh 120,000 / Night
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white">
+                    <h4 class="fw-bold">Classic Couple Villa</h4>
+                    <p class="text-muted">
+                        A romantic and elegant villa designed for couples. 
+                        Fully furnished with modern kitchen, private balcony and peaceful garden view.
+                    </p>
+
+                    <a href="{% url 'contact' %}" class="btn btn-orange rounded-pill px-4">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Villa 2 -->
+        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="villa-card shadow-lg rounded overflow-hidden">
+                <div class="position-relative">
+                    <img src="{% static 'img/villa2.jpg' %}" class="img-fluid w-100 villa-img" alt="Family Villa">
+                    
+                    <div class="price-badge">
+                        Tsh 180,000 / Night
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white">
+                    <h4 class="fw-bold">Classic Family Villa</h4>
+                    <p class="text-muted">
+                        Spacious villa perfect for families. Includes 3 bedrooms, 
+                        indoor kitchen, dining area and relaxing outdoor seating.
+                    </p>
+
+                    <a href="{% url 'contact' %}" class="btn btn-orange rounded-pill px-4">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
