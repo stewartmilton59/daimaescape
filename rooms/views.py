@@ -6,3 +6,6 @@ def one_bedroom_villa(request):
 
 def two_bedroom_villa(request):
     return render(request, 'rooms/two_bedroom_villa.html')
+
+def room_list(request):
+    return render(request, 'rooms/room_list.html')
