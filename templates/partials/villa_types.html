@@ -235,6 +235,7 @@
                   <li><i class="fa fa-check text-primary me-2"></i>Private bathroom with hot shower</li>
                   <li><i class="fa fa-check text-primary me-2"></i>Fully equipped kitchen</li>
                   <li><i class="fa fa-check text-primary me-2"></i>Outdoor patio with garden views</li>
+                  <li><i class="fa fa-dollar-sign text-primary me-2"></i>96</li>
                 </ul>
               </div>
               <div class="mt-auto">
@@ -269,6 +270,7 @@
                   <li><i class="fa fa-check text-primary me-2"></i>Two bathrooms with hot showers</li>
                   <li><i class="fa fa-check text-primary me-2"></i>Living and dining area</li>
                   <li><i class="fa fa-check text-primary me-2"></i>Private backyard with BBQ grill</li>
+                                    <li><i class="fa fa-dollar-sign text-primary me-2"></i>192</li>
                 </ul>
               </div>
               <div class="mt-auto">
@@ -282,5 +284,31 @@
   </div>
 </div>
 <!-- Villa Types End -->
-
+ 
+<!-- Newsletter/Welcome End -->
+<script>
+// Optional: Add image loading animation
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.villa-image');
+    
+    images.forEach(img => {
+        img.classList.add('loading');
+        
+        if (img.complete) {
+            img.classList.remove('loading');
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', function() {
+                this.classList.remove('loading');
+                this.classList.add('loaded');
+            });
+            
+            img.addEventListener('error', function() {
+                this.classList.remove('loading');
+                this.src = '{% static "img/placeholder-villa.jpg" %}'; // Fallback image
+            });
+        }
+    });
+});
+</script>
 {% endblock %}
