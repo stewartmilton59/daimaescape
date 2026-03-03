@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 
-def room_list(request):
+def one_bedroom_villa(request):
     return render(request, 'rooms/room_detail.html')
 
-def room_detail(request):
-    return render(request, 'rooms/room_detail.html')
+def two_bedroom_villa(request):
+    return render(request, 'rooms/two_bedroom_villa.html')
