@@ -42,8 +42,45 @@
     </button>
   </div>
 </div>
-<!-- Carousel End -->
-{% include 'partials/villa_types.html' %} 
+<!-- Carousel End -->      
+      <!-- Two Bedroom Villa -->
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="card villa-card border-0 shadow overflow-hidden">
+          <div class="row g-0">
+            <div class="col-md-6 position-relative image-container">
+              <img src="{% static 'img/family-villa.jpg' %}" 
+                   class="img-fluid villa-image" 
+                   alt="Two Bedroom Villa"
+                   loading="lazy">
+              <!-- Price Badge -->
+              <div class="price-badge">
+                <span class="price">$192</span>
+                <span class="night">/ Night</span>
+              </div>
+            </div>
+            <div class="col-md-6 p-4 d-flex flex-column">
+              <div>
+                <h4 class="text-primary mb-2">Two-Bedroom Villa</h4>
+                <h3 class="mb-3 villa-subtitle">Spacious Family Home</h3>
+                <ul class="list-unstyled mb-4 villa-features">
+                  <li><i class="fa fa-check text-primary me-2"></i>Two bedrooms with quality linen</li>
+                  <li><i class="fa fa-check text-primary me-2"></i>Two bathrooms with hot showers</li>
+                  <li><i class="fa fa-check text-primary me-2"></i>Living and dining area</li>
+                  <li><i class="fa fa-check text-primary me-2"></i>Private backyard with BBQ grill</li>
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <a href="{% url 'rooms:two-bedroom-villa' %}" class="btn btn-primary w-100">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Villa Types End -->
+
 {% include 'partials/about_us.html' %}
 {% include 'partials/gallery.html' %}
 <!-- Featured Villas Start (Your existing room section) -->
@@ -403,5 +440,5 @@
     </div>
   </div>
 </div>
-
+<!-- Newsletter/Welcome End -->
 {% endblock %}
