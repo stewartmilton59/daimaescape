@@ -1,92 +1,465 @@
-{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Gallery | Daimaescape Villas</title>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <!-- Google Fonts (luxury serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free) for subtle icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-{% block title %}Our Rooms - Daimaescape{% endblock %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-{% block content %}
-{% include 'partials/header.html' %}
+        body {
+            background: #0b0b0b; /* deep black base */
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            line-height: 1.6;
+        }
 
-<div class="container-xxl py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h6 class="section-title text-primary text-uppercase">Our Rooms</h6>
-      <h1 class="mb-3">Explore Our <span class="text-primary text-uppercase">Luxury Villas</span></h1>
-      <p class="text-muted">Experience comfort, privacy and elegance at Daimaescape.</p>
-    </div>
+        /* luxury dark gradient background */
+        .section-padding {
+            padding: 100px 0;
+            background: radial-gradient(circle at 10% 20%, #1a1a1a, #0a0a0a);
+        }
 
-    <div class="row g-4">
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
 
-      <!-- One Bedroom Villa -->
-      <div class="col-lg-4 col-md-6">
-        <div class="room-card shadow-sm rounded overflow-hidden">
-          <div class="position-relative">
-            <img src="{% static 'img/one-bedroom-villa.jpg' %}" 
-                 class="img-fluid w-100" 
-                 style="height: 280px; object-fit: cover;" 
-                 alt="One Bedroom Villa">
+        /* header with gold accent */
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-            <div class="price-tag">
-              $ 96 / Night
-            </div>
-          </div>
+        .gallery-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #f5e7c8, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            margin-bottom: 0.5rem;
+        }
 
-          <div class="p-4 text-center">
-            <h4 class="mb-3">One Bedroom Villa</h4>
+        .gallery-header p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: #ccc;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
 
-            <div class="mb-3 text-muted">
-              <i class="fa fa-bed text-primary me-2"></i>1 King Bed
-              <span class="mx-2">|</span>
-              <i class="fa fa-bath text-primary me-2"></i>1 Bathroom
-              <span class="mx-2">|</span>
-              <i class="fa fa-wifi text-primary me-2"></i>Free Wifi
-            </div>
+        /* Filter buttons — elegant gold outline */
+        .filter-btns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
 
-            <p class="text-muted">
-              Perfect for couples looking for a cozy and romantic private escape.
-            </p>
+        .filter-btns button {
+            background: transparent;
+            border: 2px solid #3a2e1f;
+            color: #e0d6c0;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 12px 32px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
 
-            <a href="#" class="btn btn-primary rounded-pill px-4">Book Now</a>
-          </div>
+        .filter-btns button:hover,
+        .filter-btns button.active {
+            background: #d4af37;
+            border-color: #d4af37;
+            color: #0a0a0a;
+            font-weight: 600;
+            box-shadow: 0 0 20px #d4af37;
+            transform: translateY(-3px);
+        }
+
+        /* Gallery grid items */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.7);
+            transition: all 0.5s ease;
+            aspect-ratio: 4 / 3;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 40px -5px #d4af37;
+            border-color: #d4af37;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 1s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* elegant overlay with "view" */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay span {
+            background: #d4af37;
+            color: #0b0b0b;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px black;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover .overlay span {
+            transform: translateY(0);
+        }
+
+        /* Bootstrap col spacing & filter hiding */
+        .gallery-filter {
+            transition: all 0.4s;
+        }
+
+        /* subtle custom for lightbox background */
+        .lb-loader .lb-cancel {
+            background: #d4af37;
+        }
+
+        .lb-nav a.lb-prev,
+        .lb-nav a.lb-next {
+            opacity: 0.8;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .gallery-header h2 {
+                font-size: 2.8rem;
+            }
+            .filter-btns button {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="section-padding">
+    <div class="container">
+
+        <!-- Header with AOS -->
+        <div class="gallery-header" data-aos="fade-up" data-aos-duration="1200">
+            <h2><i class="fas fa-crown me-3" style="color: #d4af37; -webkit-text-fill-color: #d4af37;"></i>Daimaescape Luxury<i class="fas fa-crown ms-3" style="color: #d4af37; -webkit-text-fill-color: #d4af37;"></i></h2>
+            <p>Two exclusive villas · curated elegance</p>
         </div>
-      </div>
 
-      <!-- Family Villa -->
-      <div class="col-lg-4 col-md-6">
-        <div class="room-card shadow-sm rounded overflow-hidden">
-          <div class="position-relative">
-            <img src="{% static 'img/family-villa.jpg' %}" 
-                 class="img-fluid w-100" 
-                 style="height: 280px; object-fit: cover;" 
-                 alt="Family Villa">
-
-            <div class="price-tag">
-              $ 192 / Night
-            </div>
-          </div>
-
-          <div class="p-4 text-center">
-            <h4 class="mb-3">Family Villa</h4>
-
-            <div class="mb-3 text-muted">
-              <i class="fa fa-bed text-primary me-2"></i>3 Bedrooms
-              <span class="mx-2">|</span>
-              <i class="fa fa-bath text-primary me-2"></i>2 Bathrooms
-              <span class="mx-2">|</span>
-              <i class="fa fa-swimming-pool text-primary me-2"></i>Private Pool
-            </div>
-
-            <p class="text-muted">
-              Spacious and elegant villa designed for families and group stays.
-            </p>
-
-            <a href="#" class="btn btn-primary rounded-pill px-4">Book Now</a>
-          </div>
+        <!-- Filter Buttons -->
+        <div class="filter-btns" data-aos="fade-up" data-aos-delay="200">
+            <button class="active" onclick="filterSelection('all')">All</button>
+            <button onclick="filterSelection('villa')">Villas</button>
+            <button onclick="filterSelection('interior')">Interior</button>
+            <button onclick="filterSelection('pool')">Pool</button>
+            <button onclick="filterSelection('garden')">Garden</button>
         </div>
-      </div>
 
+        <!-- Gallery Grid (row with gutters) -->
+        <div class="row g-4">
+
+            <!-- ========== VILLA CATEGORY ========== -->
+            <!-- villa 1 -->
+            <div class="col-lg-4 col-md-6 gallery-filter villa" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="gallery-item">
+                    <a href="{% static 'img/villa1.jpeg' %}" data-lightbox="daima-gallery" data-title="Sunrise Villa - exterior">
+                        <img src="{% static 'img/villa1.jpeg' %}" alt="Villa exterior">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <!-- villa 2 -->
+            <div class="col-lg-4 col-md-6 gallery-filter villa" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="gallery-item">
+                    <a href="{% static 'img/villa2.jpeg' %}" data-lightbox="daima-gallery" data-title="Sunset Villa - architecture">
+                        <img src="{% static 'img/villa2.jpeg' %}" alt="Villa wide shot">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <!-- villa 3 (extra) -->
+            <div class="col-lg-4 col-md-6 gallery-filter villa" data-aos="zoom-in-up" data-aos-delay="150">
+                <div class="gallery-item">
+                    <a href="{% static 'img/villa3.jpeg' %}" data-lightbox="daima-gallery" data-title="Villa terrace with ocean view">
+                        <img src="{% static 'img/villa3.jpeg' %}" alt="Villa terrace">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <!-- additional villa (repeat to match layout, but we use same image as placeholder, you can replace) -->
+            <div class="col-lg-4 col-md-6 gallery-filter villa" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <a href="{% static 'img/villa3.jpeg' %}" data-lightbox="daima-gallery" data-title="Private villa entrance">
+                        <img src="{% static 'img/villa3.jpeg' %}" alt="Villa entrance">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ========== INTERIOR CATEGORY ========== -->
+            <div class="col-lg-4 col-md-6 gallery-filter interior" data-aos="zoom-in-up" data-aos-delay="50">
+                <div class="gallery-item">
+                    <a href="{% static 'img/interior1.jpeg' %}" data-lightbox="daima-gallery" data-title="Master bedroom suite">
+                        <img src="{% static 'img/interior1.jpeg' %}" alt="Interior bedroom">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter interior" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="gallery-item">
+                    <a href="{% static 'img/interior2.jpeg' %}" data-lightbox="daima-gallery" data-title="Living room with fireplace">
+                        <img src="{% static 'img/interior2.jpeg' %}" alt="Living room">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter interior" data-aos="zoom-in-up" data-aos-delay="150">
+                <div class="gallery-item">
+                    <a href="{% static 'img/interior3.jpeg' %}" data-lightbox="daima-gallery" data-title="Modern kitchen & dining">
+                        <img src="{% static 'img/interior3.jpeg' %}" alt="Kitchen">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter interior" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <a href="{% static 'img/interior4.jpeg' %}" data-lightbox="daima-gallery" data-title="Luxury bathroom">
+                        <img src="{% static 'img/interior4.jpeg' %}" alt="Bathroom">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter interior" data-aos="zoom-in-up" data-aos-delay="250">
+                <div class="gallery-item">
+                    <a href="{% static 'img/interior5.jpeg' %}" data-lightbox="daima-gallery" data-title="Cozy reading nook">
+                        <img src="{% static 'img/interior5.jpeg' %}" alt="Nook">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter interior" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="gallery-item">
+                    <a href="{% static 'img/interior6.jpeg' %}" data-lightbox="daima-gallery" data-title="Staircase & art">
+                        <img src="{% static 'img/interior6.jpeg' %}" alt="Staircase">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ========== POOL CATEGORY ========== -->
+            <div class="col-lg-4 col-md-6 gallery-filter pool" data-aos="zoom-in-up" data-aos-delay="0">
+                <div class="gallery-item">
+                    <a href="{% static 'img/pool1.jpeg' %}" data-lightbox="daima-gallery" data-title="Infinity pool at sunset">
+                        <img src="{% static 'img/pool1.jpeg' %}" alt="Pool main">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter pool" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="gallery-item">
+                    <a href="{% static 'img/pool1.jpeg' %}" data-lightbox="daima-gallery" data-title="Evening pool lights">
+                        <img src="{% static 'img/pool1.jpeg' %}" alt="Pool evening">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter pool" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <a href="{% static 'img/pool1.jpeg' %}" data-lightbox="daima-gallery" data-title="Poolside loungers">
+                        <img src="{% static 'img/pool1.jpeg' %}" alt="Pool loungers">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter pool" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="gallery-item">
+                    <a href="{% static 'img/pool1.jpeg' %}" data-lightbox="daima-gallery" data-title="Panoramic pool view">
+                        <img src="{% static 'img/pool1.jpeg' %}" alt="Pool wide">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ========== GARDEN CATEGORY ========== -->
+            <div class="col-lg-4 col-md-6 gallery-filter garden" data-aos="zoom-in-up" data-aos-delay="50">
+                <div class="gallery-item">
+                    <a href="{% static 'img/garden1.jpeg' %}" data-lightbox="daima-gallery" data-title="Tropical garden path">
+                        <img src="{% static 'img/garden1.jpeg' %}" alt="Garden path">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter garden" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="gallery-item">
+                    <a href="{% static 'img/garden2.jpeg' %}" data-lightbox="daima-gallery" data-title="Mediterranean courtyard">
+                        <img src="{% static 'img/garden2.jpeg' %}" alt="Courtyard">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter garden" data-aos="zoom-in-up" data-aos-delay="150">
+                <div class="gallery-item">
+                    <a href="{% static 'img/garden3.jpeg' %}" data-lightbox="daima-gallery" data-title="Secret garden fountain">
+                        <img src="{% static 'img/garden3.jpeg' %}" alt="Garden fountain">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter garden" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <a href="{% static 'img/garden4.jpeg' %}" data-lightbox="daima-gallery" data-title="Sunrise garden terrace">
+                        <img src="{% static 'img/garden4.jpeg' %}" alt="Garden terrace">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- one extra from 'about' photos to match original sample (about-4.jpg as villa?) we'll put as villa but rename category if needed. But we keep it as villa for consistency -->
+            <div class="col-lg-4 col-md-6 gallery-filter villa" data-aos="zoom-in-up" data-aos-delay="250">
+                <div class="gallery-item">
+                    <a href="{% static 'img/about-4.jpg' %}" data-lightbox="daima-gallery" data-title="Villa romantic corner">
+                        <img src="{% static 'img/about-4.jpg' %}" alt="Villa corner">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-filter interior" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="gallery-item">
+                    <a href="{% static 'img/about-2.jpg' %}" data-lightbox="daima-gallery" data-title="Cozy interior detail">
+                        <img src="{% static 'img/about-2.jpg' %}" alt="Interior detail">
+                        <div class="overlay"><span><i class="far fa-eye me-2"></i>View</span></div>
+                    </a>
+                </div>
+            </div>
+            <!-- end gallery -->
+        </div>
     </div>
-  </div>
-</div>
-<br><br>
-<br><br><br>
-{% endblock %}
+</section>
+
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        mirror: false
+    });
+
+    // Filter function with improved smoothness
+    function filterSelection(category) {
+        let items = document.getElementsByClassName("gallery-filter");
+        let buttons = document.querySelectorAll(".filter-btns button");
+
+        // remove active class from all buttons
+        buttons.forEach(btn => btn.classList.remove("active"));
+        // add active class to clicked button (event.target)
+        event.target.classList.add("active");
+
+        // show/hide with a slight fade effect (we toggle display)
+        for (let i = 0; i < items.length; i++) {
+            if (category === "all" || items[i].classList.contains(category)) {
+                items[i].style.display = "block";
+                items[i].style.opacity = "1";
+            } else {
+                items[i].style.display = "none";
+                items[i].style.opacity = "0";
+            }
+        }
+    }
+
+    // Lightbox options for gold tint
+    lightbox.option({
+        'resizeDuration': 400,
+        'wrapAround': true,
+        'albumLabel': 'Image %1 of %2',
+        'fadeDuration': 300,
+        'imageFadeDuration': 400,
+        'maxWidth': 1200
+    });
+</script>
+
+<!-- additional style for lightbox custom (optional) -->
+<style>
+    .lb-nav a.lb-prev, .lb-nav a.lb-next, .lb-data .lb-close {
+        filter: drop-shadow(0 0 6px #d4af37);
+    }
+    .lb-data .lb-number {
+        color: #d4af37 !important;
+        font-weight: 500;
+    }
+    .lb-data .lb-caption {
+        color: #f5e7c8 !important;
+        font-size: 1.1rem;
+    }
+</style>
+
+</body>
+</html>
