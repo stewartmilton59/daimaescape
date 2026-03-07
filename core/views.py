@@ -18,7 +18,7 @@ def service(request):
 
 
 def house_rules(request):
-    return render(request, 'core/house_rules.html', {'rules': rules})
+    return render(request, 'core/house_rules.html')
 
 
 def menu(request):
